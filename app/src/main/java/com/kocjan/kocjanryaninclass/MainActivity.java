@@ -1,5 +1,6 @@
 package com.kocjan.kocjanryaninclass;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mLastName;
     private EditText mGrade;
     private Button mAdd;
+    private Button mAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,17 @@ public class MainActivity extends AppCompatActivity {
                }
             }
         });
+
+        Cursor cursor = myDb.getAllData();
+        if(cursor.getCount() == 0){
+            //no data
+        }
+
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("Id: " + cursor.getString(0))
     }
+
+
 
 
 }
