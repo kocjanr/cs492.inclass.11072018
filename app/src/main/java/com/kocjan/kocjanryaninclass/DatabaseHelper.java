@@ -17,14 +17,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,1);
-        SQLiteDatabase db = this.getWritableDatabase();
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("CREATE TABLE " + NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "FIRST TEXT, LAST TEXT,GRADE INT)");
+        //SQLiteDatabase db = this.getWritableDatabase();
+        sqLiteDatabase.execSQL("CREATE TABLE " + NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "FIRST TEXT, LAST TEXT,GRADE INT)");
 
     }
 
